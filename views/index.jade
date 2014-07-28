@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}, copy individual couch documents across servers simply and easily.
+  
+  form(method="POST", action="/" id="copydocform")
+   input(type="hidden", name="_method", value="PUT")
+   h3 Document Id 
+    input(type="text", name="docid")
+   h3 From Server 
+   select(name="from")
+    option(name="dev", value="dev") development
+    option(name="ref", value="ref") reference
+    option(name="prod", value="prod") production
+   p custom server 
+     input(type="text", name="cfrom")
+
+   h3 To Server 
+   select(name="to")
+    option(name="dev", value="dev") development
+    option(name="ref", value="ref") reference
+    //option(name="prod", value="prod") production
+   p custom server 
+     input(type="text", name="cto")
+ 
+   h3 Other Options 
+   p Remove content from template
+     input(type="checkbox", name="remove content")
+   p Turn off default auth. Useful for replicating to io2.0 boxes
+    input(type="checkbox", name="auth")
+
+   p Should we copy just the internal couch document, external couch document or both? 
+   select(name="serverType")
+    option(name="int", value="int") internal only
+    option(name="ext", value="ext") external only
+    option(name="both", value="both") both
+   p
+    input(type="submit", value="Copy Docs")
+  
