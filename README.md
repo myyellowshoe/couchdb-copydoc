@@ -5,5 +5,5 @@ An interface for replication of single couchdb documents across servers. Written
 
 
 Note:
-This is still alpha code, and bugs are still awry. Will most likely require some slight tweaking for your use.
+This is still alpha code, and bugs are still awry. Contribute and help me sqaush those nasty bugs!
 
